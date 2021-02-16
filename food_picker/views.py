@@ -4,7 +4,7 @@ from django.http import HttpResponse,JsonResponse
 
 def index(request):
     add_ingredient_form = AddIngredientForm()
-    return render(request, "index.html",{'ingredient_form' : add_ingredient_form})
+    return render(request, "modern_index.html",{'ingredient_form' : add_ingredient_form})
 
 def process_ingredients_form(request):
     if request.method == 'POST':

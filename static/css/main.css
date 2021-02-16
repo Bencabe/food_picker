@@ -2,8 +2,220 @@ body{
     margin: 0;
     border: 0;
     padding: 0;
+    background: url(../images/chopping_board.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
-#hero-image{
-    width:100%;
-    height: 45vh;
+
+
+#spinning-wheel{
+    width: 30vw;
+    margin-left: 20vw;
 }
+
+#spinning-wheel:hover{
+    -webkit-transform: rotate(1000deg);
+    -webkit-transition: -webkit-transform 2s ease-in;
+}
+
+/*--------------- Book Opening Styling ------------------ */
+
+  #books{
+      display: flex;
+      width: 100%;
+      margin-left: 200px;
+  }
+  #book-1{
+      flex: 1;
+  }
+  #book-2{
+    flex: 1;
+
+  }
+  #book-3{
+    flex: 1;
+  }
+  .book {
+    transform-style: preserve-3d;
+    /* position: relative; */
+    cursor: pointer;
+    backface-visibility: visible;
+
+  }
+  
+  .front, .back, .page1, .page2, .page3, .page4, .page5, .page6 {
+    /* transform-style: preserve-3d; */
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    transform-origin: left center;
+    transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+    /* margin-left: 20vw; */
+  }
+  .front{
+    box-shadow: 10px 0px 0px 0px rgba(2, 2, 66, 0.979);
+  }
+  
+  .front, .back {
+    background: navy;
+    color: white;
+    font-family: cursive;
+    text-align: center;
+    font-size: 40px;
+    line-height: 250px;
+  }
+  
+  .front, .page1, .page3, .page5 {
+    border-bottom-right-radius: .5em;
+    border-top-right-radius: .5em;
+  }
+  
+  .back, .page2, .page4, .page6 {
+    border-bottom-right-radius: .5em;
+    border-top-right-radius: .5em;
+  }
+  
+  .page1 { 
+    background: #efefef;
+  }
+  
+  .page2 {
+    background: #efefef;
+  }
+  
+  .page3 {
+    background: #f5f5f5;
+  }
+  
+  .page4 {
+    background: #f5f5f5;
+  }
+  
+  .page5 {
+    background: #fafafa;
+  }
+  
+  .page6 {
+    background: #fdfdfd;
+  }
+  
+  .book:hover .front {
+    transform: rotateY(-160deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+  
+  .book:hover .page1 {
+    transform: rotateY(-150deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+  
+  .book:hover .page2 {
+    transform: rotateY(-30deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+  
+  .book:hover .page3 {
+    transform: rotateY(-140deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+  
+  .book:hover .page4 {
+    transform: rotateY(-40deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+  
+  .book:hover .page5 {
+    transform: rotateY(-130deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+  
+  .book:hover .page6 {
+    transform: rotateY(-50deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+  
+  .book:hover .back {
+    transform: rotateY(-20deg) scale(1.1);
+  }
+
+
+  /* ======================= Modern HTML Styling ============================== */
+
+  /* ----------------- buttons for new ingredient and meal  -------------------- */
+
+#new-item-buttons{
+    margin-left: 10vw;
+    width: 70vw;
+}
+
+#new-item-button:hover{
+    color: white;
+    border: 1px solid white;
+}
+
+#new-item-button:active{
+    color: white;
+    border: 1px solid white;
+    box-shadow: 0px 0px 0px 0px grey;
+}
+
+#new-item-button{
+    font-family: cursive;
+    background-color: transparent;
+    width: 20vw;
+    height: 10vh;
+    margin-right: 5vw;
+    margin-top: 3vh;
+    border: 1px solid rgb(88, 88, 88);
+    color: rgb(88, 88, 88);
+    box-shadow: 1px 1px 1px 1px grey;
+    font-size: 24px;
+}
+
+#new-item-button:focus {outline:0;}
+
+
+/* ----------------- popup for adding meals and ingredients -------------------- */
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: rgba(255,255,255,0.5);
+    margin-top: 13vh;
+    margin-left: 10vw;
+    padding: 1vw;
+    /* border: 1px solid rgb(88, 88, 88); */
+    width: 18vw; /* Could be more or less, depending on screen size */
+    text-align: center;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

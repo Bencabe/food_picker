@@ -5,38 +5,45 @@
     <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
 
 </head>
+<script src="{% static '/js/main.js' %}"></script>
 <body>
-    <img id='hero-image' src="{% static '/images/food_hero_image_2.jpg' %}" alt="My image">
-    <form class='form' action="/process_ingredient_form/" method="post">
-        {% csrf_token %}
-        <h3> Add Ingredient</h3>
-        <table class='form-table'>
-            <tr>
-                <td class='form-label'>Name: </td>
-                <td class='form-input'> {{ ingredient_form.name }} </td>
-            </tr>
-            <tr>
-                <td class='form-label'>Calories: </td>
-                <td class='form-input'> {{ ingredient_form.calories_per_unit }} </td>
-            </tr>
-            <tr>
-                <td class='form-label'>Protein: </td>
-                <td class='form-input'> {{ ingredient_form.protein_per_unit }} </td>
-            </tr>
-            <tr>
-                <td class='form-label'>Carbs: </td>
-                <td class='form-input'> {{ ingredient_form.carbs_per_unit }} </td>
-            </tr>
-            <tr>
-                <td class='form-label'>Fat: </td>
-                <td class='form-input'> {{ ingredient_form.fat_per_unit }} </td>
-            </tr>
-            <tr>
-                <td class='form-label'>Staple Ingredient? </td>
-                <td class='form-input'> {{ ingredient_form.is_staple }} </td>
-            </tr>
-        </table>
-        <input class='form-submit' type="submit" value="Submit">
-    </form>
-    
+    <img id='hero-image' src="{% static '/images/food_hero_image_2.jpg' %}" alt="Hero Image">
+    <div id=books>
+        <div id='book-1' class="book">
+            <div class="back"></div>
+            <div class="page6"></div>
+            <div class="page5"></div>
+            <div class="page4"></div>
+            <div class="page3"></div>
+            <div class="page2"></div>
+            <div class="page1"></div>
+            <div class="front">Open Cookbook</div>
+        </div>
+        <div id='book-2' class="book">
+            <div class="back"></div>
+            <div class="page6">Test</div>
+            <div class="page5"></div>
+            <div class="page4"></div>
+            <div class="page3"></div>
+            <div class="page2"></div>
+            <div class="page1"></div>
+            <div class="front"></div>
+        </div>
+        <div id='book-3' class="book">
+            <div class="back"></div>
+            <div class="page6">Test</div>
+            <div class="page5"></div>
+            <div class="page4"></div>
+            <div class="page3"></div>
+            <div class="page2"></div>
+            <div class="page1"></div>
+            <div class="front"></div>
+        </div>
+    </div>
+    <!-- <img id='spinning-wheel' src="{% static '/images/spinning_wheel_1.png' %}" alt="Spinning Wheel">
+    <div id='new-item-buttons'>
+        <button id='new-item-button'> Meal Picker </button> <br>
+        <button onclick='addIngredient()' id='new-item-button'> New Ingredient</button> <br>
+        <button id='new-item-button'> New Meal</button> <br>
+    </div> -->
 </body>

@@ -8,48 +8,89 @@
 <body> 
     <!-- buttons for adding meals and ingredients -->
     <div id='new-item-buttons'>
-        <button onclick='popUpToggle()' id='new-item-button'> New Ingredient</button>
-        <button id='new-item-button'> New Meal</button>
+        <button onclick='popUpToggle(this.id)' class='new-item-button' id='new-ingredient-button'> New Ingredient</button>
+        <button onclick='popUpToggle(this.id)' class='new-item-button' id='new-meal-button'> New Meal</button>
     </div>
-    <!-- The Modal PopUp for adding ingredients and meals -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div id='new-ingredient-popup' class="modal-content">
-            <span class="close">&times;</span>
-            <form id='new-ingredient-form' class='form' action="/process_ingredient_form/" method="post">
-                {% csrf_token %}
-                <h3> Add Ingredient</h3>
-                <div id='popup'></div>
-                <table class='form-table'>
-                    <tr>
-                        <td class='form-label'>Name: </td>
-                        <td class='form-input'> {{ ingredient_form.name }} </td>
-                    </tr>
-                    <tr>
-                        <td class='form-label'>Calories: </td>
-                        <td class='form-input'> {{ ingredient_form.calories_per_unit }} </td>
-                    </tr>
-                    <tr>
-                        <td class='form-label'>Protein: </td>
-                        <td class='form-input'> {{ ingredient_form.protein_per_unit }} </td>
-                    </tr>
-                    <tr>
-                        <td class='form-label'>Carbs: </td>
-                        <td class='form-input'> {{ ingredient_form.carbs_per_unit }} </td>
-                    </tr>
-                    <tr>
-                        <td class='form-label'>Fat: </td>
-                        <td class='form-input'> {{ ingredient_form.fat_per_unit }} </td>
-                    </tr>
-                    <tr>
-                        <td class='form-label'>Staple Ingredient? </td>
-                        <td class='form-input'> {{ ingredient_form.is_staple }} </td>
-                    </tr>
-                </table>
-                <input class='form-submit' type="submit" value="Submit">
-            </form>
+    <!-- The Modal PopUp for adding ingredients-->
+    <div id='new-item-modals'>
+        <div id="new-ingredient-modal" class="modal">
+            <!-- Modal content -->
+            <div id='new-ingredient-modal' class="modal-content">
+                <span onclick='closeModal()' class="close">&times;</span>
+                <form id='new-ingredient-form' class='form' action="/process_ingredient_form/" method="post">
+                    {% csrf_token %}
+                    <h3> Add Ingredient</h3>
+                    <div id='popup'></div>
+                    <table class='form-table'>
+                        <tr>
+                            <td class='form-label'>Name: </td>
+                            <td class='form-input'> {{ ingredient_form.name }} </td>
+                        </tr>
+                        <tr>
+                            <td class='form-label'>Calories: </td>
+                            <td class='form-input'> {{ ingredient_form.calories_per_unit }} </td>
+                        </tr>
+                        <tr>
+                            <td class='form-label'>Protein: </td>
+                            <td class='form-input'> {{ ingredient_form.protein_per_unit }} </td>
+                        </tr>
+                        <tr>
+                            <td class='form-label'>Carbs: </td>
+                            <td class='form-input'> {{ ingredient_form.carbs_per_unit }} </td>
+                        </tr>
+                        <tr>
+                            <td class='form-label'>Fat: </td>
+                            <td class='form-input'> {{ ingredient_form.fat_per_unit }} </td>
+                        </tr>
+                        <tr>
+                            <td class='form-label'>Staple Ingredient? </td>
+                            <td class='form-input'> {{ ingredient_form.is_staple }} </td>
+                        </tr>
+                    </table>
+                    <input class='form-submit' type="submit" value="Submit">
+                </form>
+            </div>
         </div>
-    </div>
+            <!-- The Modal PopUp for adding meals-->
+            <div id="new-meal-modal" class="modal">
+                <!-- Modal content -->
+                <div id='new-meal-modal' class="modal-content">
+                    <span onclick='closeModal()'  class="close">&times;</span>
+                    <form id='new-ingredient-form' class='form' action="/process_ingredient_form/" method="post">
+                        {% csrf_token %}
+                        <h3> Add Meal</h3>
+                        <div id='popup'></div>
+                        <table class='form-table'>
+                            <tr>
+                                <td class='form-label'>Name: </td>
+                                <td class='form-input'> {{ ingredient_form.name }} </td>
+                            </tr>
+                            <tr>
+                                <td class='form-label'>Calories: </td>
+                                <td class='form-input'> {{ ingredient_form.calories_per_unit }} </td>
+                            </tr>
+                            <tr>
+                                <td class='form-label'>Protein: </td>
+                                <td class='form-input'> {{ ingredient_form.protein_per_unit }} </td>
+                            </tr>
+                            <tr>
+                                <td class='form-label'>Carbs: </td>
+                                <td class='form-input'> {{ ingredient_form.carbs_per_unit }} </td>
+                            </tr>
+                            <tr>
+                                <td class='form-label'>Fat: </td>
+                                <td class='form-input'> {{ ingredient_form.fat_per_unit }} </td>
+                            </tr>
+                            <tr>
+                                <td class='form-label'>Staple Ingredient? </td>
+                                <td class='form-input'> {{ ingredient_form.is_staple }} </td>
+                            </tr>
+                        </table>
+                        <input class='form-submit' type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
     <script src="{% static '/js/main.js' %}"></script>
     <script src="{% static '/js/popup.js' %}"></script>
 </body>

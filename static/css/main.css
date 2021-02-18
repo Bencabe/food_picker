@@ -150,23 +150,23 @@ body{
     width: 70vw;
 }
 
-#new-item-button:hover{
+
+.new-item-button:hover{
     color: white;
     border: 1px solid white;
 }
 
-#new-item-button:active{
+.new-item-button:active{
     color: white;
     border: 1px solid white;
     box-shadow: 0px 0px 0px 0px grey;
 }
 
-#new-item-button{
+.new-item-button{
     font-family: cursive;
     background-color: transparent;
     width: 20vw;
     height: 10vh;
-    margin-right: 5vw;
     margin-top: 3vh;
     border: 1px solid rgb(88, 88, 88);
     color: rgb(88, 88, 88);
@@ -176,10 +176,10 @@ body{
     border-top-right-radius: 20px;
 }
 
-#new-item-button:focus {outline:0;}
+.new-item-button:focus {outline:0;}
 
 
-/* ----------------- popup for adding meals and ingredients -------------------- */
+/* ----------------- modals for adding meals and ingredients -------------------- */
 
 
 /* The Modal (background) */
@@ -200,16 +200,17 @@ body{
   .modal-content {
     background-color: rgba(255,255,255,0.3);
     margin-top: 13vh;
-    margin-left: 10vw;
+    margin-right: 0;
     padding: 1vw;
     /* border: 1px solid rgb(88, 88, 88); */
+    margin-left: 10vw;
     width: 18vw; /* Could be more or less, depending on screen size */
     text-align: center;
   }
   
   /* The Close Button */
   .close {
-    color: #aaa;
+    color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;

@@ -154,6 +154,7 @@ body{
 .new-item-button:hover{
     color: white;
     border: 1px solid white;
+    cursor: pointer;
 }
 
 .new-item-button:active{
@@ -170,10 +171,12 @@ body{
     margin-top: 3vh;
     border: 1px solid rgb(88, 88, 88);
     color: rgb(88, 88, 88);
-    box-shadow: 1px 1px 1px 1px grey;
+    box-shadow: 0px 0px 0px 0px grey;
     font-size: 24px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+
+    /* display:inline-block; */
 }
 
 .new-item-button:focus {outline:0;}
@@ -202,10 +205,21 @@ body{
     margin-top: 13vh;
     margin-right: 0;
     padding: 1vw;
+    display: none;
     /* border: 1px solid rgb(88, 88, 88); */
     margin-left: 10vw;
     width: 18vw; /* Could be more or less, depending on screen size */
     text-align: center;
+  }
+
+  #new-ingredient-modal {
+    /* border: 1px solid rgb(88, 88, 88); */
+    margin-left: 10vw;
+  }
+
+  #new-meal-modal {
+    /* border: 1px solid rgb(88, 88, 88); */
+    margin-left: 30vw;
   }
   
   /* The Close Button */
@@ -222,3 +236,10 @@ body{
     text-decoration: none;
     cursor: pointer;
   }
+  .ingredients-input{
+      max-width: 10vw;
+  }
+
+  /* .form-table{
+      width: 20vw;
+  } */

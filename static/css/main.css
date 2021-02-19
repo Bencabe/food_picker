@@ -240,6 +240,30 @@ body{
       max-width: 10vw;
   }
 
-  /* .form-table{
-      width: 20vw;
-  } */
+  /* ----------------------- Ingredient Selection ---------------------------- */
+
+  #ingredient-selector{
+    float: right;
+    margin-top: 23vh;
+    margin-right: 5vw;
+  }
+
+ #select-ingredient{
+    background-color: rgba(255,255,255,0.6);
+    width: 15vw;
+    height: 4vh;
+    font-size: medium;
+    border:none;
+ }
+
+ #ac-suggestions li:hover {
+    cursor: pointer;
+ }
+
+ #select-ingredient:focus{
+    outline:0;
+}
+
+  .ui-helper-hidden-accessible{ 
+      display: none;
+    }

@@ -83,12 +83,49 @@
             </form>
         </div>
     </div>
+    <table id='results_table'>
+    </table>
     <div id='ingredient-selector'> 
+        <h3>Select Available Ingredients</h3>
         <input type="text" name="search-ingredient" id="select-ingredient" onkeyup="searchOpen()" />
+        <ul onclick='selectIngredient()' id='ac-suggestions'>
+        </ul>
+        <div id='selected_ingredients'></div>
+        <button onclick='findMeals()'>Find Meals</button>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="{% static '/js/main.js' %}"></script>
     <script src="{% static '/js/popup.js' %}"></script>
     <script src="{% static '/js/autocomplete_ingredients.js' %}"></script>
+    <script>
+       function selectIngredient() {
+            const val = $('#select-ingredient').val()
+            if ($('#selected_ingredients').html() == ''){
+                $('#selected_ingredients').append(val)
+            }
+            else{
+                $('#selected_ingredients').append(', ' + val)
+            }
+        }
+
+        function findMeals() {
+            const list = $('#selected_ingredients').html()
+            $.ajax({
+                url: 'find_meals/',
+                data: {
+                'ingredients': list
+                },
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data)
+                    for (d in data){
+                        $('#results_table').append(data[d].fields.name)
+                    }
+                }
+            });
+        }
+
+    </script>
 </body>

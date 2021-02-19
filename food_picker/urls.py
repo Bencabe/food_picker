@@ -23,4 +23,5 @@ urlpatterns = [
     path('process_ingredient_form/', views.process_ingredient_form,name='process_ingredient_form'),
     path('process_meal_form/', views.process_meal_form,name='process_meal_form'),
     path('search.json/', views.autocomplete_ingredient,name='autocomplete_ingredient'),
+    path('find_meals/', views.find_meals,name='find_meals'),
 ]

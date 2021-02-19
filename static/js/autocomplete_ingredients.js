@@ -15,6 +15,8 @@ function searchOpen() {
 
 function searchResult(data) {
     $( "#select-ingredient" ).autocomplete ({
-        source: data
+        source: data,
+        appendTo: "#ac-suggestions"
+        
     });
 }

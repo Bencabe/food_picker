@@ -243,9 +243,9 @@ body{
   /* ----------------------- Ingredient Selection ---------------------------- */
 
   #ingredient-selector{
-    float: right;
-    margin-top: 23vh;
-    margin-right: 5vw;
+    right: 5%;
+    top: 40%;
+    position: fixed;
   }
 
  #select-ingredient{
@@ -267,3 +267,42 @@ body{
   .ui-helper-hidden-accessible{ 
       display: none;
     }
+
+    /* -------------------- Meal Result Table ------------------------------- */
+
+.meal-card{
+    height: 10vh;
+    font-size: 1.5vw;
+    display: block;
+    border: 1px solid black;
+    box-shadow: 2px 2px 0 0 rgb(88, 88, 88);
+    margin-bottom: 1vh;
+    line-height: 100%;
+    display: flex;
+    line-height: 10vh;
+    overflow-y: scroll;
+}
+
+
+.meal-card div{
+    text-align: center;
+    margin-left: 1.3vw;
+    vertical-align: middle;
+    display: inline-block;
+    font-family: cursive;
+
+}
+
+.meal-card-content{
+    line-height: 1.5;
+}
+
+#meal-card-title{
+    font-weight: 250;
+}
+
+#meal-card-container{
+    margin-left: 20vw;
+    margin-top: 20vh;
+    width: 50vw;
+}

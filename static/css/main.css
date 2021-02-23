@@ -271,7 +271,7 @@ body{
     /* -------------------- Meal Result Table ------------------------------- */
 
 .meal-card{
-    height: 10vh;
+    height:5vw;
     font-size: 1.5vw;
     display: block;
     border: 1px solid black;
@@ -279,7 +279,7 @@ body{
     margin-bottom: 1vh;
     line-height: 100%;
     display: flex;
-    line-height: 10vh;
+    line-height: 5vw;
     overflow-y: scroll;
 }
 
@@ -290,11 +290,12 @@ body{
     vertical-align: middle;
     display: inline-block;
     font-family: cursive;
+    width: 25%;
 
 }
 
 .meal-card-content{
-    line-height: 1.5;
+    line-height: 1.8;
 }
 
 #meal-card-title{
@@ -302,7 +303,7 @@ body{
 }
 
 #meal-card-container{
+    width: 50vw;
     margin-left: 20vw;
     margin-top: 20vh;
-    width: 50vw;
 }

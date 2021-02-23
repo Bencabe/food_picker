@@ -21,7 +21,14 @@ function findMeals() {
         success: function (data) {
             console.log(data)
             for (d in data){
-                $('#meal-card-container').append('<div class=meal-card> <div id=meal-card-title>' + data[d].fields.name + '</div> <div class=meal-card-content > Star Rating <br>'+ data[d].fields.star_rating  + '</div> <div class=meal-card-content > Time to Cook <br>'+ data[d].fields.minutes  + ' Minutes </div> </div>')
+                // add sections on meal card. splitting this up into multiple lines for readability
+                // $('#meal-card-container').append('<div class=meal-card>')
+                // $('#meal-card-container').append('<div id=meal-card-title>' + data[d].fields.name + '</div>')
+                // $('#meal-card-container').append('<div class=meal-card-content > Star Rating <br>' + data[d].fields.star_rating  + '</div>')
+                // $('#meal-card-container').append('<div class=meal-card-content > Time to Cook <br>' + data[d].fields.minutes  + '</div>')
+                // $('#meal-card-container').append('<div class=meal-card-content > Recipe URL <br> N/A </div>')
+                // $('#meal-card-container').append('</div>')
+                $('#meal-card-container').append('<div class=meal-card> <div id=meal-card-title>' + data[d].fields.name + '</div> <div class=meal-card-content > Star Rating <br>' + data[d].fields.star_rating  + '</div> <div class=meal-card-content > Time to Cook <br>' + data[d].fields.minutes  + '</div> <div class=meal-card-content > Recipe URL <br> N/A </div>')
             }
         }
     });

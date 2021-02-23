@@ -4,6 +4,7 @@ from django.http import HttpResponse,JsonResponse
 from django.core import serializers
 import json as simplejson
 from .models import Ingredient, Meal
+from django.db.models import Count
 
 def index(request):
     add_ingredient_form = AddIngredientForm()
@@ -41,7 +42,12 @@ def autocomplete_ingredient(request):
 
 def find_meals(request):
     ingredients = request.GET['ingredients']
-    ingredient_list = ingredients.split(',')
-    meals = list(Meal.objects.filter(ingredients__name__in=ingredient_list))
-    meals_json = serializers.serialize('json', meals)
+    # split ingredients into list and remove trailing white spaces
+    ingredient_list = [x.strip() for x in ingredients.split(',')]
+    # get meals which contain ingredients listed
+    # meal_query = Meal.objects.filter(ingredients__name__in=ingredient_list)
+    meal_query = Meal.objects.annotate(count=Count('ingredients')).filter(count=len(ingredient_list))
+    for ingredient in ingredient_list:
+        meal_query = meal_query.filter(ingredients__name=ingredient)
+    meals_json = serializers.serialize('json', meal_query)
     return HttpResponse(meals_json, content_type='application/json')

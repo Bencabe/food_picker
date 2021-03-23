@@ -9,7 +9,7 @@ from django.db.models import Count
 def index(request):
     add_ingredient_form = AddIngredientForm()
     add_meal_form = AddMealForm()
-    return render(request, "modern_index.html",{'ingredient_form' : add_ingredient_form, 'meal_form': add_meal_form})
+    return render(request, "index.html",{'ingredient_form' : add_ingredient_form, 'meal_form': add_meal_form})
 
 def process_ingredient_form(request):
     if request.method == 'POST':

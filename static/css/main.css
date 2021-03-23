@@ -40,6 +40,7 @@ body{
     font-size: 24px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    min-width: 170px;
 
     /* display:inline-block; */
 }
@@ -73,7 +74,7 @@ body{
     display: none;
     /* border: 1px solid rgb(88, 88, 88); */
     margin-left: 10vw;
-    width: 18vw; /* Could be more or less, depending on screen size */
+    width: 18vw;
     text-align: center;
   }
 
@@ -86,6 +87,54 @@ body{
     /* border: 1px solid rgb(88, 88, 88); */
     margin-left: 30vw;
   }
+
+  @media (min-width: 1300px){
+    .modal-content {
+      margin-left: 10vw;
+      width: 18vw;
+    }
+    #new-ingredient-modal {
+      /* border: 1px solid rgb(88, 88, 88); */
+      margin-left: 10vw;
+    }
+    #new-meal-modal {
+      /* border: 1px solid rgb(88, 88, 88); */
+      margin-left: 30vw;
+    }
+  }
+
+  @media (min-width: 820px) and (max-width: 1299px){
+    .modal-content {
+      margin-left: 10vw;
+      width: 38vw;
+    }
+    #new-ingredient-modal {
+      /* border: 1px solid rgb(88, 88, 88); */
+      margin-left: 10vw;
+    }
+    #new-meal-modal {
+      /* border: 1px solid rgb(88, 88, 88); */
+      margin-left: 10vw;
+    }
+  }
+
+  @media (max-width: 819px){
+    .modal-content {
+      margin-left: 10vw;
+      width: 328px;
+    }
+    #new-ingredient-modal {
+      /* border: 1px solid rgb(88, 88, 88); */
+      margin-left: 10vw;
+    }
+    #new-meal-modal {
+      /* border: 1px solid rgb(88, 88, 88); */
+      margin-left: 10vw;
+    }
+  }
+
+  /* @media (max-width: 699px){
+  } */
   
   /* The Close Button */
   .close {
@@ -108,9 +157,46 @@ body{
   /* ----------------------- Ingredient Selection ---------------------------- */
 
   #ingredient-selector{
-    right: 5%;
+    right: 0;
     top: 40%;
     position: fixed;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    min-height: 300px;
+    border: 1px solid rgb(88, 88, 88,0.3);
+  }
+
+  #display-control{
+    writing-mode: vertical-lr;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    order:1;
+    background-color: rgb(88, 88, 88,0.3);
+  }
+
+  #display-control-text{
+    transform: rotate(180deg);
+    text-align: center;
+
+  
+  }
+  #ingredient-selector-content{
+    order:2;
+    text-align: center;
+    min-width: 20vw;
+    margin-left: 5px;
+  }
+  @media (max-width: 1000px){
+    #ingredient-selector-content{
+      display: none;
+      background-color: blue;
+    }
   }
 
  #select-ingredient{

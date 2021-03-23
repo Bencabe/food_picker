@@ -84,13 +84,18 @@
         </div>
     </div>
     <div id='meal-card-container'></div>
-    <div id='ingredient-selector'> 
-        <h3>Select Available Ingredients</h3>
-        <input type="text" name="search-ingredient" id="select-ingredient" onkeyup="searchOpen()" />
-        <ul onclick='selectIngredient()' id='ac-suggestions'>
-        </ul>
-        <div id='selected_ingredients'></div>
-        <button onclick='findMeals()'>Find Meals</button>
+    <div id='ingredient-selector'>
+        <div id='display-control'>
+            <span id='display-control-text'>Toggle</span>
+        </div>
+        <div id='ingredient-selector-content'>
+            <h3>Select Available Ingredients</h3>
+            <input type="text" name="search-ingredient" id="select-ingredient" onkeyup="searchOpen()" />
+            <ul onclick='selectIngredient()' id='ac-suggestions'>
+            </ul>
+            <div id='selected_ingredients'></div>
+            <button onclick='findMeals()'>Find Meals</button>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -85,7 +85,7 @@
     </div>
     <div id='meal-card-container'></div>
     <div id='ingredient-selector'>
-        <div id='display-control'>
+        <div onclick="toggelIngredientSelector()" id='display-control'>
             <span id='display-control-text'>Toggle</span>
         </div>
         <div id='ingredient-selector-content'>
@@ -104,4 +104,5 @@
     <script src="{% static '/js/popup.js' %}"></script>
     <script src="{% static '/js/get_meals.js' %}"></script>
     <script src="{% static '/js/autocomplete_ingredients.js' %}"></script>
+    <script src="{% static '/js/ingredient_selector_toggle.js' %}"></script>
 </body>

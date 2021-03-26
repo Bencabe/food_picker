@@ -169,6 +169,8 @@ body{
     display: flex;
     min-height: 300px;
     border: 1px solid rgb(88, 88, 88,0.3);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
   }
 
   #display-control{
@@ -178,6 +180,10 @@ body{
     justify-content: center;
     order:1;
     background-color: rgb(88, 88, 88,0.3);
+  }
+
+  #display-control:hover{
+    cursor: pointer;
   }
 
   #display-control-text{

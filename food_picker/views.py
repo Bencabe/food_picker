@@ -24,9 +24,14 @@ def process_ingredient_form(request):
 
 def process_meal_form(request):
     # used to process the form for adding new meals
+    print('=================== Post ====================')
+    print(request.POST)
+    print('=============================================')
     if request.method == 'POST':
         form = AddMealForm(request.POST)
+        print('===================Meal Form:====================')
         print(form)
+        print('=================================================')
     if form.is_valid():
         # process form data
         form.save()
@@ -36,6 +41,7 @@ def process_meal_form(request):
 
 def autocomplete_ingredient(request):
     # used to provide list of potential ingredients in ingredient picker based on first few letters 
+    print(request)
     search_qs = Ingredient.objects.filter(name__startswith=request.GET['search'])
     results = []
     for r in search_qs:

@@ -31,7 +31,7 @@ body{
 .new-item-button{
     font-family: cursive;
     background-color: transparent;
-    width: 20vw;
+    width: 22vw;
     height: 10vh;
     margin-top: 3vh;
     border: 1px solid rgb(88, 88, 88);
@@ -74,24 +74,14 @@ body{
     display: none;
     /* border: 1px solid rgb(88, 88, 88); */
     margin-left: 10vw;
-    width: 18vw;
+    width: 20vw;
     text-align: center;
-  }
-
-  #new-ingredient-modal {
-    /* border: 1px solid rgb(88, 88, 88); */
-    margin-left: 10vw;
-  }
-
-  #new-meal-modal {
-    /* border: 1px solid rgb(88, 88, 88); */
-    margin-left: 30vw;
   }
 
   @media (min-width: 1300px){
     .modal-content {
       margin-left: 10vw;
-      width: 18vw;
+      width: 20vw;
     }
     #new-ingredient-modal {
       /* border: 1px solid rgb(88, 88, 88); */
@@ -99,14 +89,14 @@ body{
     }
     #new-meal-modal {
       /* border: 1px solid rgb(88, 88, 88); */
-      margin-left: 30vw;
+      margin-left: 32vw;
     }
   }
 
   @media (min-width: 820px) and (max-width: 1299px){
     .modal-content {
       margin-left: 10vw;
-      width: 38vw;
+      width: 42vw;
     }
     #new-ingredient-modal {
       /* border: 1px solid rgb(88, 88, 88); */
@@ -150,8 +140,20 @@ body{
     text-decoration: none;
     cursor: pointer;
   }
-  .ingredients-input{
-      max-width: 10vw;
+
+  #ingredient-input-ac{
+    /* float: bottom;
+    display: block; */
+    /* float: left; */
+    display: block;
+    align-items: center;
+  }
+
+  #ingredient-input-ac li:hover{
+    cursor: pointer;
+  }
+  .form-input{
+    width: 10px;
   }
 
   /* ----------------------- Ingredient Selection ---------------------------- */

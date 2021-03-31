@@ -68,7 +68,8 @@
                     </tr>
                     <tr>
                         <td class='form-label'>Ingredients: </td>
-                        <td class='form-input'> {{ meal_form.ingredients }} </td>
+                        <td id='ingredient-input-row' class='form-input'> <input type='text' id='ingredient-input' name="search-ingredient" onkeyup="searchIngredientAddMeal()"/></td>
+                        <td><button type="button" onclick='addIngredient()'>Add</button></td>
                     </tr>
                     <tr>
                         <td class='form-label'>Star Rating: </td>
@@ -81,6 +82,11 @@
                 </table>
                 <input class='form-submit' type="submit" value="Submit">
             </form>
+            <ul id='ingredient-input-ac'></ul>
+            <div id='selected-ingredients'>
+                <h4 id='selected-ingredients-header'>Selected Ingredients</h4>
+                <div id='selected-ingredients-content'></div>
+            </div>
         </div>
     </div>
     <div id='meal-card-container'></div>
@@ -90,7 +96,7 @@
         </div>
         <div id='ingredient-selector-content'>
             <h3>Select Available Ingredients</h3>
-            <input type="text" name="search-ingredient" id="select-ingredient" onkeyup="searchOpen()" />
+            <input type="text" name="search-ingredient" id="select-ingredient" onkeyup="searchIngredientAutoComplete()" />
             <ul onclick='selectIngredient()' id='ac-suggestions'>
             </ul>
             <div id='selected_ingredients'></div>
@@ -105,4 +111,5 @@
     <script src="{% static '/js/get_meals.js' %}"></script>
     <script src="{% static '/js/autocomplete_ingredients.js' %}"></script>
     <script src="{% static '/js/ingredient_selector_toggle.js' %}"></script>
+    <script src="{% static '/js/add_meal_modal.js' %}"></script>
 </body>
